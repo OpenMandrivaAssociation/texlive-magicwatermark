@@ -1,6 +1,6 @@
 Name:		texlive-magicwatermark
 Version:	63656
-Release:	1
+Release:	2
 Summary:	An easy and flexible way to set watermarks
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/magicwatermark
