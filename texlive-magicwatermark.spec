@@ -3,7 +3,7 @@ Version:	63656
 Release:	2
 Summary:	An easy and flexible way to set watermarks
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/magicwatermark
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/magicwatermark
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magicwatermark.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magicwatermark.doc.r%{version}.tar.xz
