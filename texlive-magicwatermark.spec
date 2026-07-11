@@ -1,40 +1,22 @@
-Name:		texlive-magicwatermark
-Version:	63656
-Release:	2
+%global tl_name magicwatermark
+%global tl_revision 76924
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.2B
+Release:	%{tl_revision}.1
 Summary:	An easy and flexible way to set watermarks
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/magicwatermark
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magicwatermark.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magicwatermark.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magicwatermark.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/magicwatermark.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/magicwatermark.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package can flexibly set and clear watermarks. It is based
-on everypage and TikZ, encapsulated by LaTeX3. All watermark
-content is placed inside a TikZ node in the center of the page.
+This package can flexibly set and clear watermarks. It is based on
+everypage and TikZ, encapsulated by LaTeX3. All watermark content is
+placed inside a TikZ node in the center of the page.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/magicwatermark
-%{_texmfdistdir}/tex/latex/magicwatermark
-%doc %{_texmfdistdir}/doc/latex/magicwatermark
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
